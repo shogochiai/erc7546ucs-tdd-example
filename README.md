@@ -48,6 +48,19 @@ TallyForksOp example shows UCS is able to sustain several voting rule (even you 
 ![tallyforks](./docs/images/tallyF.png)
 ![test tallyforks](./docs/images/testTallyF.png)
 
+### Read/Write as Proxy on Etherscan 
+- `forge script script/OpsGenFFI.s.sol`
+  - It generates `Ops.sol` which has UCS Dictionary feature and all functions of this projects.
+- `forge script script/Upgrade.s.sol:Upgrade --chain $CHAIN --rpc-url $RPC_URL --etherscan-api-key $ETHERSCAN_API_KEY --verify --broadcast --private-key $PRIVATE_KEY`
+  - It upgrades proxy's implementation.
+  - TODOs
+    - Run deploy
+    - Run upgrade
+    - Gen Ops.sol from script
+    - Fix upgrade script flow to put that Ops generator
+    - Check etherscan verify works fine
+
+
 ## Performance
 - Commit [2ce217](https://github.com/shogochiai/erc7546ucs-tdd-example/tree/2ce21728bcb4fbccf6931517c4d0bddbbb84e50d) `forge test`, solc 0.8.23, 2 files
   - Compilation time: 5.43s
